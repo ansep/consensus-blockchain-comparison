@@ -14,3 +14,18 @@ per provarlo:
 3. tendermint node --proxy_app=kvstore
 
 4. poi avviare RPCClient.js
+
+
+## PBFT
+
+
+npm install amqplib
+
+install rabbit mq
+
+start rabbit mq
+
+node receiver.js
+
+node sender.js
+

@@ -1,0 +1,14 @@
+#Docker-Compose nodes
+
+version: '3.9'
+name: nodes
+services:
+  node1:
+    image: node1
+    build: ./node
+    container_name: node1
+    
+  node2:
+    image: node2
+    build: ./node
+    container_name: node2
