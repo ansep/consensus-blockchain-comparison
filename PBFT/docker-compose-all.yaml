@@ -1,0 +1,24 @@
+#Docker-Compose RABBIT_MQ
+
+version: '3.9'
+name: epo-all
+services: 
+  
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - network-1
+      - network-2
+      - network-3
+
+networks:
+  network-ita:
+      name : rabbitmq-1
+  network-fra:
+      name : rabbitmq-2
+  network-ger:
+      name : rabbitmq-3
