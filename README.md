@@ -18,14 +18,29 @@ per provarlo:
 
 ## PBFT
 
+Installing Node.js in Ubuntu:
+ ```
+sudo apt update
+sudo apt install nodejs npm
+```
 
+Install amqplib for local use:
+```
 npm install amqplib
+```
 
-install rabbit mq
+Install rabbit mq:
+```
+docker pull rabbitmq
+```
 
-start rabbit mq
+Start rabbit mq
+```
+```
 
+Launch scripts:
+```
 node receiver.js
 
 node sender.js
-
+```
