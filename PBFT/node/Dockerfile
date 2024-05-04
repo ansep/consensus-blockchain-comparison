@@ -1,15 +1,14 @@
-# Use the official Node.js image as base
-FROM node:14-alpine
+# Use the official Node.js LTS image as a base
+FROM node:lts
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the JavaScript files into the container
-COPY receiver.js /app/
-COPY sender.js /app/
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-# Install any dependencies if required
-# RUN npm install
+# Copy the entire src directory to /app/src
+COPY src/ ./src
 
-# Command to run when the container starts
-CMD ["node", "receiver.js"]
+# Define the command to run the script
+CMD ["node", "src/receiver.js"]

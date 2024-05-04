@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+
+  node1:
+    build: ./node
+    container_name: node1
+    ports:
+    - 8080:8080
+
+networks:
+  rabbitmq_nodejs:
+    name: rabbitmq_nodejs
+    external: true
+
+volumes:
+  pgdata: {}
