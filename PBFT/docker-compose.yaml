@@ -29,6 +29,8 @@ services:
         condition: service_healthy
     networks:
       - pbft
+    volumes:
+      - ./node/data/node1:/data
 
   node2:
     image: node2
@@ -39,3 +41,5 @@ services:
         condition: service_healthy
     networks:
       - pbft
+    volumes:
+      - ./node/data/node2:/data

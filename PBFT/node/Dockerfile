@@ -9,6 +9,9 @@ COPY ./receiver.js /app/
 COPY ./sender.js /app/
 COPY ./package.json /app/
 
+# Install SQLite3
+RUN apk add --no-cache sqlite
+
 # Install any dependencies if required
 RUN npm install
 

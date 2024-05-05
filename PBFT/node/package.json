@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.10.4"
+    "amqplib": "^0.10.4",
+    "sqlite3": "^5.1.7"
   }
 }
