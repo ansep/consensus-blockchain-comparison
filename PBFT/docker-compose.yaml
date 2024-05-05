@@ -2,13 +2,40 @@
 
 version: '3.9'
 name: nodes
+networks:
+  pbft:
+    driver: bridge
 services:
+  rabbit:
+    image: rabbit
+    build: ./rabbitmq
+    container_name: rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - pbft
   node1:
     image: node1
     build: ./node
     container_name: node1
-    
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    networks:
+      - pbft
+
   node2:
     image: node2
     build: ./node
     container_name: node2
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    networks:
+      - pbft

@@ -5,11 +5,12 @@ FROM node:14-alpine
 WORKDIR /app
 
 # Copy the JavaScript files into the container
-COPY receiver.js /app/
-COPY sender.js /app/
+COPY ./receiver.js /app/
+COPY ./sender.js /app/
+COPY ./package.json /app/
 
 # Install any dependencies if required
-# RUN npm install
+RUN npm install
 
 # Command to run when the container starts
 CMD ["node", "receiver.js"]

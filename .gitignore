@@ -1,1 +1,4 @@
-node_modules
+DLT/node_modules
+DLT/package-lock.json
+PBFT/node/node_modules
+PBFT/node/package-lock.json
