@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ansep/consensus-blockchain-comparison#readme",
   "dependencies": {
     "abci": "^5.0.1",
+    "js-abci": "^0.1.1",
     "tendermint": "^2.0.3",
     "ws": "^8.17.0"
   }
