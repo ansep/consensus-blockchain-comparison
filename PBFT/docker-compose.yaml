@@ -35,6 +35,8 @@ services:
       - pbft
     volumes:
       - ./node/data/node1:/data
+    environment:
+      - NODE_ID=1
 
   node2:
     image: node2
@@ -47,6 +49,8 @@ services:
       - pbft
     volumes:
       - ./node/data/node2:/data
+    environment:
+      - NODE_ID=2
 
   node3:
     image: node3
@@ -59,6 +63,8 @@ services:
       - pbft
     volumes:
       - ./node/data/node3:/data
+    environment:
+      - NODE_ID=3
 
   node4:
     image: node4
@@ -71,3 +77,5 @@ services:
       - pbft
     volumes:
       - ./node/data/node4:/data
+    environment:
+      - NODE_ID=4

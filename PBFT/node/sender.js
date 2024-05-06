@@ -11,13 +11,16 @@ amqp.connect("amqp://rabbit", function (error0, connection) {
       throw error1;
     }
     var exchange = "logs";
-    var msg = process.argv.slice(2).join(" ") || "Hello World!";
+    var msg = {
+      sender: process.env.NODE_ID,
+      text: process.argv.slice(2).join(" ") || "Hello World!",
+    };
 
     channel.assertExchange(exchange, "fanout", {
       durable: false,
     });
-    channel.publish(exchange, "", Buffer.from(msg));
-    console.log(" [x] Sent %s", msg);
+    channel.publish(exchange, "", Buffer.from(JSON.stringify(msg)));
+    console.log("Sent ", msg);
   });
 
   setTimeout(function () {
